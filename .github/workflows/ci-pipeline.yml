@@ -1,4 +1,4 @@
-name: Test Self-Hosted Runner with Docker
+name: Test Self-Hosted Runner
 
 on: [push, pull_request]
 
@@ -14,17 +14,3 @@ jobs:
 
       - name: List Files
         run: ls -alh
-
-      - name: Verify Docker Installation
-        run: docker --version
-
-      - name: Run a Test Docker Container
-        run: docker run hello-world
-
-      - name: Build and Run Docker Container
-        run: |
-          docker build -t my-app .
-          docker run -d --name my-app-container my-app
-
-      - name: List Running Containers
-        run: docker ps -a
